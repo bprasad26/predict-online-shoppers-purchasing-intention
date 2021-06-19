@@ -128,126 +128,140 @@ controls = dbc.Card(
         dbc.FormGroup(
             [
                 dbc.Label("Page Value", size="md"),
-                dbc.Input(
+                # dbc.Input(
+                #     id="page-value-input",
+                #     value="37",
+                #     type="text",  # passing numbers causing unexpected behaviour
+                #     debounce=True,
+                # ),
+                dcc.Slider(
                     id="page-value-input",
-                    value="37",
-                    type="text",  # passing numbers causing unexpected behaviour
-                    debounce=True,
+                    min=0,
+                    max=300,
+                    step=1,
+                    value=10,
+                    marks={
+                        0: "0",
+                        30: "30",
+                        90: "90",
+                        150: "150",
+                        210: "210",
+                        300: "300",
+                    },
                 ),
-                dbc.FormText("Enter a value between $0 to $300.", color="secondary"),
+                # dbc.FormText("Enter a value between $0 to $300.", color="secondary"),
             ],
         ),
         dbc.FormGroup(
             [
                 dbc.Label("Exit Rate", size="md"),
-                dbc.Input(
-                    id="exit-rate-input",
-                    value="0.03",
-                    type="text",  # passing numbers causing unexpected behaviour
-                    debounce=True,
-                ),
-                dbc.FormText("Enter a value between 0 and 1"),
-                # dcc.Slider(
-                #     id="exit-rate-slider",
-                #     min=0.0,
-                #     max=1.0,
-                #     step=0.01,
-                #     value=0.05,
-                #     marks={
-                #         0: "0",
-                #         0.1: "0.1",
-                #         0.3: "0.3",
-                #         0.5: "0.5",
-                #         0.7: "0.7",
-                #         0.9: "0.9",
-                #         1: "1",
-                #     },
+                # dbc.Input(
+                #     id="exit-rate-input",
+                #     value="0.03",
+                #     type="text",  # passing numbers causing unexpected behaviour
+                #     debounce=True,
                 # ),
+                dcc.Slider(
+                    id="exit-rate-input",
+                    min=0.0,
+                    max=1.0,
+                    step=0.01,
+                    value=0.05,
+                    marks={
+                        0: "0",
+                        0.1: "0.1",
+                        0.3: "0.3",
+                        0.5: "0.5",
+                        0.7: "0.7",
+                        0.9: "0.9",
+                        1: "1",
+                    },
+                ),
+                # dbc.FormText("Enter a value between 0 and 1"),
             ]
         ),
         dbc.FormGroup(
             [
                 dbc.Label("Bounce Rate", size="md"),
-                dbc.Input(
-                    id="bounce-rate-input",
-                    value="0",
-                    type="text",  # passing numbers causing unexpected behaviour
-                    debounce=True,
-                ),
-                dbc.FormText("Enter a value between 0 and 1")
-                # dcc.Slider(
-                #     id="bounce-rate-slider",
-                #     min=0.0,
-                #     max=1.0,
-                #     step=0.01,
-                #     value=0.05,
-                #     marks={
-                #         0: "0",
-                #         0.1: "0.1",
-                #         0.3: "0.3",
-                #         0.5: "0.5",
-                #         0.7: "0.7",
-                #         0.9: "0.9",
-                #         1: "1",
-                #     },
+                # dbc.Input(
+                #     id="bounce-rate-input",
+                #     value="0",
+                #     type="text",  # passing numbers causing unexpected behaviour
+                #     debounce=True,
                 # ),
+                dcc.Slider(
+                    id="bounce-rate-input",
+                    min=0.0,
+                    max=1.0,
+                    step=0.01,
+                    value=0.0,
+                    marks={
+                        0: "0",
+                        0.1: "0.1",
+                        0.3: "0.3",
+                        0.5: "0.5",
+                        0.7: "0.7",
+                        0.9: "0.9",
+                        1: "1",
+                    },
+                ),
+                # dbc.FormText("Enter a value between 0 and 1")
             ],
         ),
         dbc.FormGroup(
             [
                 dbc.Label("Product Related", size="md"),
-                dbc.Input(
-                    id="product-related-input", value="34", type="text", debounce=True
-                ),
-                # dcc.Slider(
-                #     id="product-related-slider",
-                #     min=0,
-                #     max=200,
-                #     step=1,
-                #     value=18,
-                #     marks={
-                #         0: "0",
-                #         30: "30",
-                #         60: "60",
-                #         90: "90",
-                #         150: "150",
-                #         200: "200",
-                #     },
+                # dbc.Input(
+                #     id="product-related-input", value="34", type="text", debounce=True
                 # ),
-                dbc.FormText(
-                    "Number of times user visited product related section (0-200).",
-                    color="secondary",
+                dcc.Slider(
+                    id="product-related-input",
+                    min=0,
+                    max=200,
+                    step=1,
+                    value=18,
+                    marks={
+                        0: "0",
+                        30: "30",
+                        60: "60",
+                        90: "90",
+                        150: "150",
+                        200: "200",
+                    },
                 ),
+                # dbc.FormText(
+                #     "Number of times user visited product related section (0-200).",
+                #     color="secondary",
+                # ),
             ],
         ),
         dbc.FormGroup(
             [
                 dbc.Label("Product Related Duration", size="md"),
-                dbc.Input(
-                    id="product-related-duration-input",
-                    value="80",
-                    type="text",
-                    debounce=True,
-                ),
-                # dcc.Slider(
-                #     id="product-related-duration-slider",
-                #     min=0,
-                #     max=100,
-                #     step=1,
-                #     value=5,
-                #     marks={
-                #         0: "0",
-                #         5: "5",
-                #         10: "10",
-                #         20: "20",
-                #         30: "30",
-                #         60: "60",
-                #         100: "100",
-                #     },
+                # dbc.Input(
+                #     id="product-related-duration-input",
+                #     value="80",
+                #     type="text",
+                #     debounce=True,
                 # ),
-                dbc.FormText(
-                    "Total Time spent in product related section (0-100 min.)"
+                dcc.Slider(
+                    id="product-related-duration-input",
+                    min=0,
+                    max=100,
+                    step=1,
+                    value=55,
+                    marks={
+                        0: "0",
+                        10: "10",
+                        20: "20",
+                        30: "30",
+                        60: "60",
+                        100: "100",
+                    },
                 ),
+                # dbc.FormText(
+                #     "Total Time spent in product related section (0-100 min.)"
+                # ),
             ],
         ),
     ],
@@ -413,7 +427,8 @@ feature_imp_card = dbc.Card(
 )
 
 # Dash app for predicting customer purchasing intention
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
+server = app.server
 
 app.layout = dbc.Container(
     [
@@ -453,6 +468,15 @@ app.layout = dbc.Container(
                                         html.A(
                                             "LinkedIn",
                                             href="https://www.linkedin.com/in/bhola-prasad-0065834b/",
+                                            target="_blank",
+                                        )
+                                    ]
+                                ),
+                                html.Div(
+                                    [
+                                        html.A(
+                                            "GitHub",
+                                            href="https://github.com/bprasad26/predict-online-shoppers-purchasing-intention",
                                             target="_blank",
                                         )
                                     ]
