@@ -372,7 +372,7 @@ def permutation_importance_plot():
             x=permutation_importance[perm_sorted_idx],
             y=X_train.columns[perm_sorted_idx],
             orientation="h",
-            marker_color="#329932",
+            # marker_color="#329932",
         )
     )
     fig.update_layout(
@@ -392,7 +392,7 @@ def feature_importance_plot():
             x=rf_clf.feature_importances_[tree_importance_sorted_idx],
             y=tree_indices,
             orientation="h",
-            marker_color="#329932",
+            # marker_color="#329932",
         )
     )
     fig.update_layout(
