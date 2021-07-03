@@ -9,6 +9,10 @@ The objective is to predict which visitors will decide to buy according to the c
 
 
 
-https://user-images.githubusercontent.com/57306418/123899334-9e51bf00-d984-11eb-9445-fe8dca34874a.mov
+
+
+https://user-images.githubusercontent.com/57306418/124340046-12cc6e00-dbd0-11eb-8cff-cb2f6829bf98.mov
+
+
 
 
